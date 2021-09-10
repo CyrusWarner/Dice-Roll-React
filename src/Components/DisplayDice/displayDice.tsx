@@ -2,7 +2,8 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
 import { IconContext } from "react-icons";
-const DisplayDice = () => {
+const DisplayDice = (props: any) => {
+    const {randomInt} = props;
   const allDice = [
     <FaIcons.FaDiceOne />,
     <FaIcons.FaDiceTwo />,
@@ -11,11 +12,10 @@ const DisplayDice = () => {
     <FaIcons.FaDiceFive />,
     <FaIcons.FaDiceSix  />,
   ];
-  console.log(allDice);
   return (
       <IconContext.Provider value={{color: "red", size: "5rem"}}>
     <div>
-      <div>{allDice[1]}</div>
+      <div>{allDice[randomInt]}</div>
     </div>
       </IconContext.Provider>
 
