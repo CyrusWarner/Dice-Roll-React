@@ -26,14 +26,14 @@ const [disabledPlayerTwo, setDisabledPlayerTwo ] = useState(true);
       <Row >
           <Col sm={6}>
             <div className="text-center mt-5">
-              <DisplayDice playerOneRole={playerOneRoll}/>
+              <DisplayDice playerRoll={playerOneRoll}/>
             <h1>Player One</h1>
             <Button  disabled={disabledPlayerOne} onClick={getPlayerOneRoll}>Roll Dice</Button>
             </div>
           </Col>
           <Col sm={6}>
             <div className="text-center mt-5">
-              <DisplayDice playerOneRole={playerTwoRoll}/>
+              <DisplayDice playerRoll={playerTwoRoll}/>
             <h1>Player Two</h1>
             <Button disabled={disabledPlayerTwo} onClick={getPlayerTwoRoll}>Roll Dice</Button>
             </div>

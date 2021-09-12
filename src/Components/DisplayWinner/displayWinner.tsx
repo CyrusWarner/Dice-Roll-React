@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 
 type playerRoll = {
@@ -8,25 +8,24 @@ type playerRoll = {
 
 const DisplayWinner = (props: playerRoll) => {
   const { playerOneRoll, playerTwoRoll } = props;
-  useEffect(() => {
-    getWinner();
-  });
   const getWinner = () => {
-    if (playerOneRoll > playerTwoRoll) {
-      return;
+    if(playerOneRoll === 0 && playerTwoRoll === 0)
+    {
+        return <h1>Roll The Dice To Start The Game</h1>
+    }
+    else if (playerOneRoll > playerTwoRoll) {
+        return <h1>Player One Won The Round!</h1>
     } else if (playerOneRoll < playerTwoRoll) {
-      return;
+        return <h1>Player Two Won The Round!</h1> 
     } else {
-      return;
+        return <h1>It Was A Tie!</h1>
     }
   };
   return (
     <Container>
       <Row>
         <div className="d-flex justify-content-center mt-2">
-            {playerOneRoll === 0 &&
-                <h1>Roll dice to start the game!</h1>
-            }
+            {getWinner()}
         </div>
       </Row>
     </Container>
