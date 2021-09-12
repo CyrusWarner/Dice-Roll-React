@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import DisplayDice from "./Components/DisplayDice/displayDice";
+import DisplayWinner from "./Components/DisplayWinner/displayWinner";
 import { Container, Row, Col, Button } from "react-bootstrap";
 const App = () => {
 const [playerOneRoll, setPlayerOneRoll] = useState(0)
@@ -20,6 +21,7 @@ const [disabledPlayerTwo, setDisabledPlayerTwo ] = useState(true);
     setDisabledPlayerTwo(true)
   }
   return (
+    <>
     <Container>
       <Row >
           <Col sm={6}>
@@ -38,6 +40,8 @@ const [disabledPlayerTwo, setDisabledPlayerTwo ] = useState(true);
           </Col>
       </Row>
     </Container>
+    <DisplayWinner playerOneRoll={playerOneRoll} playerTwoRoll={playerTwoRoll}/>
+    </>
   );
 };
 
