@@ -54,4 +54,3 @@ BUGGED =    :warning:
 ### Home
 - Display for two users with buttons to roll dice
 - Dice displayed depending on what a user rolls
----
